@@ -10,6 +10,7 @@ markdown = "*"
 django-filter = "*"
 python-dotenv = "*"
 django-cors-headers = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
