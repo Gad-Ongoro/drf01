@@ -11,6 +11,11 @@ django-filter = "*"
 python-dotenv = "*"
 django-cors-headers = "*"
 dj-database-url = "*"
+psycopg2 = "*"
+asgiref = "*"
+psycopg2-binary = "*"
+sqlparse = "*"
+gunicorn = "*"
 
 [dev-packages]
 
