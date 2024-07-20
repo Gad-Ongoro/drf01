@@ -16,6 +16,9 @@ asgiref = "*"
 psycopg2-binary = "*"
 sqlparse = "*"
 gunicorn = "*"
+djangorestframework-simplejwt = "*"
+timedelta = "*"
+datetime = "*"
 
 [dev-packages]
 
