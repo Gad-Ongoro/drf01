@@ -3,8 +3,10 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     user_type = models.CharField(max_length=255)
-    email = models.EmailField(unique=True)
+    email = models.EmailField(unique=True, max_length=100)
     
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username', 'user_type']
     # Related_name to avoid clashes with built-in User model
     groups = models.ManyToManyField('auth.Group', related_name='customuser_set', blank=True)
     user_permissions = models.ManyToManyField('auth.Permission', related_name='customuser_set', blank=True)
