@@ -14,22 +14,22 @@ class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = serializers.UserSerializer
     
 # service views
-class ServiceListCreate(generics.ListCreateAPIView):
-    queryset = models.Service.objects.all()
-    serializer_class = serializers.ServiceSerializer
+class ProductListCreate(generics.ListCreateAPIView):
+    queryset = models.Product.objects.all()
+    serializer_class = serializers.ProductSerializer
     
-class ServiceDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = models.Service.objects.all()
-    serializer_class = serializers.ServiceSerializer
+class ProductDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Product.objects.all()
+    serializer_class = serializers.ProductSerializer
 
 # booking views
-class BookingListCreate(generics.ListCreateAPIView):
-    queryset = models.Booking.objects.all()
-    serializer_class = serializers.BookingSerializer
+class OrderListCreate(generics.ListCreateAPIView):
+    queryset = models.Order.objects.all()
+    serializer_class = serializers.OrderSerializer
     
-class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = models.Booking.objects.all()
-    serializer_class = serializers.BookingSerializer
+class OrderDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Order.objects.all()
+    serializer_class = serializers.OrderSerializer
     
 # review views
 class ReviewListCreate(generics.ListCreateAPIView):

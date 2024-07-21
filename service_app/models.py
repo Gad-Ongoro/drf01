@@ -11,9 +11,8 @@ class User(AbstractUser):
     groups = models.ManyToManyField('auth.Group', related_name='customuser_set', blank=True)
     user_permissions = models.ManyToManyField('auth.Permission', related_name='customuser_set', blank=True)
 
-# Create your models here.
-class Service(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='services')
+class Product(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='products')
     category = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     description = models.TextField()
@@ -22,22 +21,22 @@ class Service(models.Model):
     def __str__(self):
         return self.title
     
-class Booking(models.Model):
-    service = models.ForeignKey(Service, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings')
+class Order(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
     date = models.DateField()
     status = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.service.title
+        return self.product.title
     
 class Review(models.Model):
-    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
     rating = models.IntegerField()
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.service.title
+        return self.product.title

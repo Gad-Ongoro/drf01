@@ -7,12 +7,12 @@ urlpatterns = [
     path('users/<int:pk>/', views.UserDetailView.as_view()),
     
     # service routes
-    path('services/', views.ServiceListCreate.as_view()),
-    path('services/<int:pk>/', views.ServiceDetailView.as_view()),
+    path('services/', views.ProductListCreate.as_view()),
+    path('services/<int:pk>/', views.ProductDetailView.as_view()),
     
     # booking routes
-    path('bookings/', views.BookingListCreate.as_view()),
-    path('bookings/<int:pk>/', views.BookingDetailView.as_view()),
+    path('bookings/', views.OrderListCreate.as_view()),
+    path('bookings/<int:pk>/', views.OrderDetailView.as_view()),
     
     # review routes
     path('reviews/', views.ReviewListCreate.as_view()),
