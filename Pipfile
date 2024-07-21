@@ -19,6 +19,7 @@ gunicorn = "*"
 djangorestframework-simplejwt = "*"
 timedelta = "*"
 datetime = "*"
+whitenoise = "*"
 
 [dev-packages]
 
