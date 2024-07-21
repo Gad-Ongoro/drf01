@@ -11,6 +11,12 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = models.User.objects.create_user(**validated_data)
         return user
+    
+# profile serializer
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Profile
+        fields = '__all__'
   
 # service serializers  
 class ServiceSerializer(serializers.ModelSerializer):

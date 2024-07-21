@@ -5,7 +5,11 @@ urlpatterns = [
     # user routes
     path('users/', views.UserListCreate.as_view()),
     path('users/<int:pk>/', views.UserDetailView.as_view()),
-    
+
+    # profile routes
+    path('profiles/', views.ProfileList.as_view(), name='Profiles List'),
+    path('profiles/<int:pk>/', views.ProfileDetailView.as_view(), name='Profile Detail'),
+
     # service routes
     path('services/', views.ServiceListCreate.as_view()),
     path('services/<int:pk>/', views.ServiceDetailView.as_view()),

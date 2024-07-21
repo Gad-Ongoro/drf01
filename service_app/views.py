@@ -13,6 +13,15 @@ class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.User.objects.all()
     serializer_class = serializers.UserSerializer
     
+# profile views
+class ProfileList(generics.ListAPIView):
+    queryset = models.Profile.objects.all()
+    serializer_class = serializers.ProfileSerializer
+
+class ProfileDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Profile.objects.all()
+    serializer_class = serializers.ProfileSerializer
+
 # service views
 class ServiceListCreate(generics.ListCreateAPIView):
     queryset = models.Service.objects.all()

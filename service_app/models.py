@@ -10,6 +10,20 @@ class User(AbstractUser):
     # Related_name to avoid clashes with built-in User model
     groups = models.ManyToManyField('auth.Group', related_name='customuser_set', blank=True)
     user_permissions = models.ManyToManyField('auth.Permission', related_name='customuser_set', blank=True)
+    
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    secondary_email = models.EmailField(null=True, blank=True)
+    bio = models.TextField(null=True, blank=True)
+    county = models.CharField(max_length=100, null=True, blank=True)
+    city = models.CharField(max_length=100, null=True, blank=True)
+    country = models.CharField(max_length=100, null=True, blank=True)
+    phone = models.CharField(max_length=100, null=True, blank=True)
+    date_of_birth = models.DateField(null=True, blank=True)
+    gender = models.CharField(max_length=100, null=True, blank=True)
+    profile_picture = models.ImageField(upload_to='profile_pictures', null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 # Create your models here.
 class Service(models.Model):
